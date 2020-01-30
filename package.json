@@ -1,0 +1,10 @@
+{
+  "name": "@skypilot/commit-parser",
+  "version": "0.0.0",
+  "description": "Tool for parsing the content of Git commit messages",
+  "main": "lib/index.js",
+  "repository": "https://github.com/skypilotcc/commit-parser.git",
+  "author": "William Thorsen <william@thorsen.dev>",
+  "license": "ISC",
+  "private": false
+}
