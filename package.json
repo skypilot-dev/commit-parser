@@ -1,7 +1,7 @@
 {
   "name": "@skypilot/commit-parser",
   "version": "0.0.0",
-  "description": "Tool for parsing the content of Git commit messages",
+  "description": "A tool for parsing the content of Git commit messages",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
@@ -15,12 +15,34 @@
   },
   "homepage": "https://github.com/skypilotcc/commit-parser#readme",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "all-ci-checks": "yarn run all-cq-checks && yarn run build",
+    "all-cq-checks": "yarn run typecheck && yarn run lint --quiet && yarn test",
+    "build": "rm -rf lib && yarn run compile-ts",
+    "ci": "yarn run all-ci-checks",
+    "compile-ts": "babel ./src --out-dir ./lib --extensions .ts --ignore '**/__tests__/*' --ignore '**/*.d.ts' && yarn run generate-typings",
+    "cq": "yarn run all-cq-checks",
+    "generate-typings": "tsc --project tsconfig.generate-typings.json",
+    "lint": "eslint --cache '**/*.{js,ts}'",
+    "prepublishOnly": "yarn run typecheck && yarn run lint --quiet && yarn test && yarn run build",
+    "publish:default": "yarn publish --non-interactive",
+    "tc": "yarn run typecheck",
+    "test": "jest",
+    "typecheck": "tsc"
   },
   "keywords": [
     "git",
     "commit",
     "parser",
     "tool"
-  ]
+  ],
+  "devDependencies": {
+    "@skypilot/toolchain": "^1.8.10-beta"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "/lib"
+  ],
+  "types": "lib/index.d.ts"
 }
