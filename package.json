@@ -36,7 +36,7 @@
     "tool"
   ],
   "devDependencies": {
-    "@skypilot/toolchain": "^1.8.10-beta"
+    "@skypilot/toolchain": "^3.5.8"
   },
   "publishConfig": {
     "access": "public"
