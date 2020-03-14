@@ -1,19 +1,32 @@
 {
   "name": "@skypilot/commit-parser",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "private": false,
   "description": "A tool for parsing the content of Git commit messages",
-  "main": "lib/index.js",
+  "keywords": [
+    "git",
+    "commit",
+    "parser",
+    "tool"
+  ],
+  "homepage": "https://github.com/skypilotcc/commit-parser#readme",
+  "bugs": {
+    "url": "https://github.com/skypilotcc/commit-parser/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/skypilotcc/commit-parser.git"
   },
-  "author": "William Thorsen <william@thorsen.dev>",
   "license": "ISC",
-  "private": false,
-  "bugs": {
-    "url": "https://github.com/skypilotcc/commit-parser/issues"
+  "author": {
+    "name": "William Thorsen",
+    "email": "william@thorsen.dev"
   },
-  "homepage": "https://github.com/skypilotcc/commit-parser#readme",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "/lib"
+  ],
   "scripts": {
     "all-ci-checks": "yarn run all-cq-checks && yarn run build",
     "all-cq-checks": "yarn run typecheck && yarn run lint --quiet && yarn test",
@@ -29,25 +42,16 @@
     "test": "jest",
     "typecheck": "tsc"
   },
-  "keywords": [
-    "git",
-    "commit",
-    "parser",
-    "tool"
-  ],
-  "devDependencies": {
-    "@skypilot/toolchain": "^3.5.8"
-  },
-  "publishConfig": {
-    "access": "public"
-  },
   "resolutions": {
     "**/acorn-globals/acorn": "^6.4.1",
     "**/jsdom/acorn": "^7.1.1",
     "eslint/**/acorn": "^7.1.1"
   },
-  "files": [
-    "/lib"
-  ],
-  "types": "lib/index.d.ts"
+  "dependencies": {},
+  "devDependencies": {
+    "@skypilot/toolchain": "^3.5.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
